@@ -1,6 +1,7 @@
 require 'ebay/types/listing_duration_reference'
 require 'ebay/types/listing_enhancement_duration_reference'
 require 'ebay/types/store_owner_extended_listing_durations'
+require 'ebay/types/condition_values'
 
 module Ebay # :nodoc:
   module Types # :nodoc:
@@ -43,6 +44,10 @@ module Ebay # :nodoc:
     #  boolean_node :classified_ad_pay_per_lead_enabled, 'ClassifiedAdPayPerLeadEnabled', 'true', 'false', :optional => true
     #  text_node :item_specifics_enabled, 'ItemSpecificsEnabled', :optional => true
     #  boolean_node :paisa_pay_full_escrow_enabled, 'PaisaPayFullEscrowEnabled', 'true', 'false', :optional => true
+    #  boolean_node :upc_identifier_enabled, 'UPCIdentifierEnabled', 'true', 'false', :optional => true
+    #  boolean_node :ean_identifier_enabled, 'EANIdentifierEnabled', 'true', 'false', :optional => true
+    #  boolean_node :isbn_identifier_enabled, 'ISBNIdentifierEnabled', 'true', 'false', :optional => true
+    #  boolean_node :brand_mpn_identifier_enabled, 'BrandMPNIdentifierEnabled', 'true', 'false', :optional => true
     #  boolean_node :classified_ad_auto_accept_enabled, 'ClassifiedAdAutoAcceptEnabled', 'true', 'false', :optional => true
     #  boolean_node :best_offer_auto_accept_enabled, 'BestOfferAutoAcceptEnabled', 'true', 'false', :optional => true
     #  boolean_node :cross_border_trade_north_america_enabled, 'CrossBorderTradeNorthAmericaEnabled', 'true', 'false', :optional => true
@@ -109,6 +114,13 @@ module Ebay # :nodoc:
     #  text_node :item_compatibility_enabled, 'ItemCompatibilityEnabled', :optional => true
     #  numeric_node :min_item_compatibility, 'MinItemCompatibility', :optional => true
     #  numeric_node :max_item_compatibility, 'MaxItemCompatibility', :optional => true
+    #  text_node :condition_enabled, 'ConditionEnabled', :optional => true
+    #  object_node :condition_values, 'ConditionValues', :class => ConditionValues, :optional => true
+    #  boolean_node :value_category, 'ValueCategory', 'true', 'false', :optional => true
+    #  text_node :product_creation_enabled, 'ProductCreationEnabled', :optional => true
+    #  numeric_node :max_granular_fitment_count, 'MaxGranularFitmentCount', :optional => true
+    #  text_node :compatible_vehicle_type, 'CompatibleVehicleType', :optional => true
+    #  text_node :payment_options_group, 'PaymentOptionsGroup', :optional => true
     class CategoryFeature
       include XML::Mapping
       include Initializer
@@ -151,6 +163,10 @@ module Ebay # :nodoc:
       boolean_node :classified_ad_pay_per_lead_enabled, 'ClassifiedAdPayPerLeadEnabled', 'true', 'false', :optional => true
       text_node :item_specifics_enabled, 'ItemSpecificsEnabled', :optional => true
       boolean_node :paisa_pay_full_escrow_enabled, 'PaisaPayFullEscrowEnabled', 'true', 'false', :optional => true
+      boolean_node :upc_identifier_enabled, 'UPCIdentifierEnabled', 'true', 'false', :optional => true
+      boolean_node :ean_identifier_enabled, 'EANIdentifierEnabled', 'true', 'false', :optional => true
+      boolean_node :isbn_identifier_enabled, 'ISBNIdentifierEnabled', 'true', 'false', :optional => true
+      boolean_node :brand_mpn_identifier_enabled, 'BrandMPNIdentifierEnabled', 'true', 'false', :optional => true
       boolean_node :classified_ad_auto_accept_enabled, 'ClassifiedAdAutoAcceptEnabled', 'true', 'false', :optional => true
       boolean_node :best_offer_auto_accept_enabled, 'BestOfferAutoAcceptEnabled', 'true', 'false', :optional => true
       boolean_node :cross_border_trade_north_america_enabled, 'CrossBorderTradeNorthAmericaEnabled', 'true', 'false', :optional => true
@@ -217,6 +233,13 @@ module Ebay # :nodoc:
       text_node :item_compatibility_enabled, 'ItemCompatibilityEnabled', :optional => true
       numeric_node :min_item_compatibility, 'MinItemCompatibility', :optional => true
       numeric_node :max_item_compatibility, 'MaxItemCompatibility', :optional => true
+      text_node :condition_enabled, 'ConditionEnabled', :optional => true
+      object_node :condition_values, 'ConditionValues', :class => ConditionValues, :optional => true
+      boolean_node :value_category, 'ValueCategory', 'true', 'false', :optional => true
+      text_node :product_creation_enabled, 'ProductCreationEnabled', :optional => true
+      numeric_node :max_granular_fitment_count, 'MaxGranularFitmentCount', :optional => true
+      text_node :compatible_vehicle_type, 'CompatibleVehicleType', :optional => true
+      text_node :payment_options_group, 'PaymentOptionsGroup', :optional => true
     end
   end
 end

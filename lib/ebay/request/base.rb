@@ -9,6 +9,7 @@ module Ebay
       def call_name
         self.class.to_s.split('::').last.gsub(/Request$/, '')
       end
+
     end
   end
 end

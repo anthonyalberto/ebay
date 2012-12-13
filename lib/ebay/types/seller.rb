@@ -3,6 +3,7 @@ require 'ebay/types/scheduling_info'
 require 'ebay/types/pro_stores_checkout_preference'
 require 'ebay/types/charity_affiliation_detail'
 require 'ebay/types/feature_eligibility'
+require 'ebay/types/seller_ebay_payment_process_consent_code'
 
 module Ebay # :nodoc:
   module Types # :nodoc:
@@ -35,6 +36,11 @@ module Ebay # :nodoc:
     #  object_node :feature_eligibility, 'FeatureEligibility', :class => FeatureEligibility, :optional => true
     #  boolean_node :top_rated_seller, 'TopRatedSeller', 'true', 'false', :optional => true
     #  value_array_node :top_rated_seller_details, 'TopRatedSellerDetails', 'TopRatedProgram', :default_value => []
+    #  value_array_node :recoupment_policy_consents, 'RecoupmentPolicyConsent', 'Site', :default_value => []
+    #  boolean_node :domestic_rate_table, 'DomesticRateTable', 'true', 'false', :optional => true
+    #  boolean_node :international_rate_table, 'InternationalRateTable', 'true', 'false', :optional => true
+    #  text_node :seller_ebay_payment_process_status, 'SellereBayPaymentProcessStatus', :optional => true
+    #  object_node :seller_ebay_payment_process_consent, 'SellereBayPaymentProcessConsent', :class => SellereBayPaymentProcessConsentCode, :optional => true
     class Seller
       include XML::Mapping
       include Initializer
@@ -67,6 +73,11 @@ module Ebay # :nodoc:
       object_node :feature_eligibility, 'FeatureEligibility', :class => FeatureEligibility, :optional => true
       boolean_node :top_rated_seller, 'TopRatedSeller', 'true', 'false', :optional => true
       value_array_node :top_rated_seller_details, 'TopRatedSellerDetails', 'TopRatedProgram', :default_value => []
+      value_array_node :recoupment_policy_consents, 'RecoupmentPolicyConsent', 'Site', :default_value => []
+      boolean_node :domestic_rate_table, 'DomesticRateTable', 'true', 'false', :optional => true
+      boolean_node :international_rate_table, 'InternationalRateTable', 'true', 'false', :optional => true
+      text_node :seller_ebay_payment_process_status, 'SellereBayPaymentProcessStatus', :optional => true
+      object_node :seller_ebay_payment_process_consent, 'SellereBayPaymentProcessConsent', :class => SellereBayPaymentProcessConsentCode, :optional => true
     end
   end
 end

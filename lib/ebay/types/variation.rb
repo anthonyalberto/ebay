@@ -24,7 +24,7 @@ module Ebay # :nodoc:
       include XML::Mapping
       include Initializer
       root_element_name 'Variation'
-      text_node :sku, 'SKU', :optional => true
+      text_node :sku, 'SKU', :optional => truequantity
       money_node :start_price, 'StartPrice', :optional => true
       numeric_node :quantity, 'Quantity', :optional => true
       array_node :variation_specifics, 'VariationSpecifics', 'NameValueList', :class => NameValueList, :default_value => []

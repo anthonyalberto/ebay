@@ -32,7 +32,6 @@ module Ebay #:nodoc:
     end
 
     def post(path, body, headers)
-      File.open("/var/www/wordans/log/ebay.log", 'w') {|f| f.write(body) }
       request(:post, path, body, headers)
     end
 
